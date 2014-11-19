@@ -26,7 +26,7 @@ Features and limitations
 * Can be used together with [Martini](https://github.com/go-martini/martini), either directly or by using the [fizz](https://github.com/xyproto/fizz) package.
 * Also works together with [Gin](https://github.com/gin-gonic/gin).
 * May also work with other web-related packages, since the standard http.HandlerFunc is used everywhere.
-
+* The default permissions can be cleared with the Clear() function.
 
 
 Example for [Negroni](https://github.com/codegangsta/negroni)
@@ -49,6 +49,9 @@ func main() {
 
 	// New permissions middleware
 	perm := permissions.New()
+
+        // Blank slate, no default permissions
+	// perm.Clear()
 
 	// Get the userstate, used in the handlers below
 	userstate := perm.UserState()
