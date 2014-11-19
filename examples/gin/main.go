@@ -15,6 +15,9 @@ func main() {
 	// New permissions middleware
 	perm := permissions.New()
 
+	// Blank slate, no default permissions
+	//perm.Clear()
+
 	// Set up a middleware handler for Gin, with a custom "permission denied" message.
 	permissionHandler := func(c *gin.Context) {
 		// Check if the user has the right admin/user rights

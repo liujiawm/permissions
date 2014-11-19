@@ -51,7 +51,7 @@ func main() {
 	perm := permissions.New()
 
         // Blank slate, no default permissions
-	// perm.Clear()
+	//perm.Clear()
 
 	// Get the userstate, used in the handlers below
 	userstate := perm.UserState()
@@ -143,6 +143,9 @@ func main() {
 	// New permissions middleware
 	perm := permissions.New()
 
+        // Blank slate, no default permissions
+	//perm.Clear()
+
 	// Get the userstate, used in the handlers below
 	userstate := perm.UserState()
 
@@ -230,7 +233,7 @@ Password hashing
 ----------------
 
 * "sha256" is used by default for hashing passwords, but it can be changed to "bcrypt".
-* This parameter should be set and left. Switching algos after shipping code to production is not supported.
+* This parameter should be set and left. Switching the algorithm for applications that already has stored password hashes will cause problems.
 
 ~~~go
 [...]

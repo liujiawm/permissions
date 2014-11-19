@@ -16,6 +16,9 @@ func main() {
 	// New permissions middleware
 	perm := permissions.New()
 
+	// Blank slate, no default permissions
+	//perm.Clear()
+
 	// Get the userstate, used in the handlers below
 	userstate := perm.UserState()
 
