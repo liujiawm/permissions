@@ -91,8 +91,8 @@ func NewUserState(dbindex int, randomseed bool, redisHostPort string) *UserState
 	// Cookies lasts for 24 hours by default. Specified in seconds.
 	state.cookieTime = defaultCookieTime
 
-	// Default password algorithm is "bcrypt" options ("sha256", "bcrypt")
-	state.passwordAlgo = "bcrypt"
+	// Default password algorithm is "sha256" options ("sha256", "bcrypt")
+	state.passwordAlgo = "sha256"
 
 	return state
 }

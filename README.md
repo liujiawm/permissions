@@ -8,6 +8,12 @@ Online API Documentation
 [godoc.org](http://godoc.org/github.com/xyproto/permissions)
 
 
+Versions
+--------
+* Version 1: https://github.com/xyproto/permissions
+* Version 2: https://github.com/xyproto/permissions2
+
+
 Features and limitations
 ------------------------
 
