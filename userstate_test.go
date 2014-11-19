@@ -41,15 +41,15 @@ func TestPerm(t *testing.T) {
 func TestPasswordBasic(t *testing.T) {
 	userstate := NewUserStateSimple()
 
-	// assert default password algorithm is sha256
+	// Assert that the default password algorithm is sha256
 	if userstate.GetPasswordAlgo() != "sha256" {
-		t.Error("Error, sha256 should be default password algorithm")
+		t.Error("Error, sha256 should be the default password algorithm")
 	}
 
-	// set password algo
+	// Set password algorithm
 	userstate.SetPasswordAlgo("bcrypt")
 
-	// assert change should be bcrypt
+	// Assert that the algorithm is now bcrypt
 	if userstate.GetPasswordAlgo() != "bcrypt" {
 		t.Error("Error, setting password algorithm failed")
 	}
