@@ -217,15 +217,14 @@ Default permissions
 * These path prefixes has user rights by default: */repo* and */data*
 * These path prefixes are public by default: */*, */login*, */register*, */style*, */img*, */js*, */favicon.ico*, */robots.txt* and */sitemap_index.xml*
 
-Default password hashing algorithm
--------------------
+Password hashing
+----------------
 
-* By default, Permissions uses "sha256" for password hashing
-* You can however set the algorithm to "bcrypt" [example below]
-* This parameter should be set and left. Switching algos after shipping code to production is not supported
+* "sha256" is used by default for hashing passwords, but it can be changed to "bcrypt".
+* This parameter should be set and left. Switching algos after shipping code to production is not supported.
 
-~~~ go
-...snip...
+~~~go
+[...]
 
 func main() {
 	n := negroni.Classic()
@@ -241,7 +240,7 @@ func main() {
 	// instead we set the only other supported algorithm, "bcrypt"
 	userstate.SetPasswordAlgo("bcrypt")
 
-...snip...
+[...]
 ~~~
 
 General information
