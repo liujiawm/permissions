@@ -50,7 +50,7 @@ func main() {
 	// New permissions middleware
 	perm := permissions.New()
 
-        // Blank slate, no default permissions
+	// Blank slate, no default permissions
 	//perm.Clear()
 
 	// Get the userstate, used in the handlers below
@@ -143,7 +143,7 @@ func main() {
 	// New permissions middleware
 	perm := permissions.New()
 
-        // Blank slate, no default permissions
+	// Blank slate, no default permissions
 	//perm.Clear()
 
 	// Get the userstate, used in the handlers below
@@ -236,7 +236,7 @@ Password hashing
 * This parameter should be set and left. Switching the algorithm for applications that already has stored password hashes will cause problems.
 
 ~~~go
-[...]
+...
 
 func main() {
 	n := negroni.Classic()
@@ -252,7 +252,7 @@ func main() {
 	// instead we set the only other supported algorithm, "bcrypt"
 	userstate.SetPasswordAlgo("bcrypt")
 
-[...]
+...
 ~~~
 
 General information
