@@ -12,6 +12,8 @@ Versions
 --------
 * Version 1: https://github.com/xyproto/permissions
 * Version 2: https://github.com/xyproto/permissions2
+  * bcrypt is the default hashing algorithm
+  * more ideomatic getter functions
 
 
 Features and limitations
