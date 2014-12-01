@@ -1,6 +1,6 @@
 #Permissions [![Build Status](https://travis-ci.org/xyproto/permissions.svg?branch=master)](https://travis-ci.org/xyproto/permissions) [![GoDoc](https://godoc.org/github.com/xyproto/permissions?status.svg)](http://godoc.org/github.com/xyproto/permissions)
 
-Middleware for [Negroni](https://github.com/codegangsta/negroni), for keeping track of users, login states and permissions.
+Middleware for keeping track of users, login states and permissions.
 
 Online API Documentation
 ------------------------
@@ -14,6 +14,7 @@ Versions
 * Version 2: https://github.com/xyproto/permissions2
   * bcrypt is the default hashing algorithm
   * more ideomatic getter functions
+  * supports negroni, martini, gin and macaron
 
 
 Features and limitations
@@ -25,9 +26,9 @@ Features and limitations
 * Supports registration and confirmation via generated confirmation codes.
 * Tries to keep things simple.
 * Only supports "public", "user" and "admin" permissions out of the box, but offers functionality for implementing more fine grained permissions, if so desired.
-* Can be used together with [Martini](https://github.com/go-martini/martini), either directly or by using the [fizz](https://github.com/xyproto/fizz) package.
+* Can be used together with [Martini](https://github.com/go-martini/martini).
 * Also works together with [Gin](https://github.com/gin-gonic/gin).
-* May also work with other web-related packages, since the standard http.HandlerFunc is used everywhere.
+* Should also work with other web-frameworks, since the standard http.HandlerFunc is used everywhere.
 * The default permissions can be cleared with the Clear() function.
 
 
@@ -231,31 +232,12 @@ Default permissions
 * These path prefixes has user rights by default: */repo* and */data*
 * These path prefixes are public by default: */*, */login*, */register*, */style*, */img*, */js*, */favicon.ico*, */robots.txt* and */sitemap_index.xml*
 
+
 Password hashing
 ----------------
 
-* "sha256" is used by default for hashing passwords, but it can be changed to "bcrypt".
-* This parameter should be set and left. Switching the algorithm for applications that already has stored password hashes will cause problems.
+* "sha256" is used by default for hashing passwords. Use [permissions2](https://github.com/xyproto/permissions2) for bcrypt.
 
-~~~go
-...
-
-func main() {
-	n := negroni.Classic()
-	mux := http.NewServeMux()
-
-	// New permissions middleware
-	perm := permissions.New()
-
-	// Get the userstate, used in the handlers below
-	userstate := perm.UserState()
-
-	// for backwards compatibility the default is "sha256"
-	// instead we set the only other supported algorithm, "bcrypt"
-	userstate.SetPasswordAlgo("bcrypt")
-
-...
-~~~
 
 General information
 -------------------
