@@ -1,4 +1,8 @@
-#Permissions [![Build Status](https://travis-ci.org/xyproto/permissions.svg?branch=master)](https://travis-ci.org/xyproto/permissions) [![GoDoc](https://godoc.org/github.com/xyproto/permissions?status.svg)](http://godoc.org/github.com/xyproto/permissions)
+# Deprecated, please use [permissions2](https://github.com/xyproto/permissions) instead!
+
+---
+
+# Permissions [![Build Status](https://travis-ci.org/xyproto/permissions.svg?branch=master)](https://travis-ci.org/xyproto/permissions) [![GoDoc](https://godoc.org/github.com/xyproto/permissions?status.svg)](http://godoc.org/github.com/xyproto/permissions)
 
 Middleware for keeping track of users, login states and permissions.
 
